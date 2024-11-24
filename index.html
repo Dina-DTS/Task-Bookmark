@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="images/bookmarkIcon.png">
+    <title>Bookmark</title>
+
+    <script
+      src="https://kit.fontawesome.com/e0fd1ee343.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+
+
+ <!-- start bookmark-body  -->
+
+<div class="containPage position-relative">
+
+  <!-- alert -->
+  <div class="alert alert-danger text-center m-auto d-none  " role="alert" id="alertErr">
+  </div>  
+
+  <!-- bookmark body -->
+ <div class="container py-5 d-flex justify-content-center align-items-center flex-column ">
+      <h1 class="py-2 title-head">Bookmarker</h1>
+
+      <div class="bookmark-body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+        <h2><i class="fa-solid fa-bookmark"></i>  Bookmark your favorite sites  <i class="fa-solid fa-bookmark"></i></h2>
+
+        <div class="site-name w-100 d-flex flex-column justify-content-center">
+          <label for="bookmarkName" class="pb-2 fw-semibold"><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label>
+          <input oninput="validate(this)" type="text" placeholder="Bookmark Name" class="form-control" id="bookmarkName">
+          <div class="alert alert-danger my-2 d-none" role="alert">
+              "Invalid site name. Please enter a name using only letters, like 'Google' or 'Facebook' with <strong>first letter Uppercase .</strong>"
+          </div>
+        </div>
+
+        <div class="site-url w-100 d-flex flex-column justify-content-center">
+          <label for="bookmarkURL" class="pb-2 fw-semibold"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+          <input oninput="validate(this)" type="url" placeholder="Website URL" class="form-control" id="bookmarkURL">
+          <div class="alert alert-danger my-2 d-none" role="alert">
+            "Enter a valid URL starting with 'http://' or 'https://', followed by a valid domain (e.g., 'example.com').          </div>
+        </div>
+
+        <button onclick="addBookmark();" class="btn btn-danger px-5" id="submitBtn">Submit</button>
+        <button onclick="updateBookmark();" class="btn btn-warning px-5 d-none" id="updateBookmark">Update</button>
+      </div>
+
+      <table class="table text-center bg-light mt-3 ">
+          <thead>
+            <th class="text-capitalize">index</th>
+            <th class="text-capitalize">Website Name</th>
+            <th class="text-capitalize">Visit</th>
+            <th class="text-capitalize">Delete</th>
+            <th class="text-capitalize">Update</th>
+        </thead>
+          <tbody id="tableContent"></tbody>
+     </table>
+    
+ </div>
+
+ 
+  <!-- model display -->
+  <div class="model-display d-none w-100 " id="modelId">
+  <div class="modal d-block " tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <span class="red-circle"></span>
+            <span class="yellow-circle"></span>
+            <span class="green-circle"></span>
+          </h5>
+          <button onclick="closeModal()" type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" id="buttonClose" ></button>
+        </div>
+        <div class="modal-body">
+          <p>Site Name or Url is not valid, Please follow the rules below : </p>
+          <ol class="rules list-unstyled m-0">
+            <li class="">
+              <i class="fa-regular fa-circle-right p-2"></i> Site name must contain at least 4 characters 
+             </li>
+            <li class="">
+              <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a valid one
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ 
+</div>
+
+
+
+
+
+
+  
+
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

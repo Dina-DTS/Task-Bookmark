@@ -1,0 +1,109 @@
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #F7ECDE;
+  color: 352e28;
+}
+*{
+  box-sizing: border-box;
+}
+
+/* BookMark Body Style */
+.title-head{
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+  position: relative;
+
+}
+.title-head::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  left: 0;
+  bottom: 10px;
+  background-color: #fec260;
+  transition: height 350ms;
+  z-index: -1;
+}
+.title-head:hover::before {
+  height: 50%;
+}
+.bookmark-body {
+  border-width: 2px 0 2px 0;
+  border-style: dotted;
+  border-color: #352e28;
+}
+.bookmark-body h2 {
+   font-family: "Righteous", sans-serif;
+  font-size: 25px;
+  background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #d99c39;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+#submitBtn{
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+
+/* modal style */
+.model-display{
+  background-color: #0007;
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100vh;
+}
+span{
+  border-radius: 50%; 
+  margin-right: 8px; 
+  display: inline-block;
+  width: 20px; 
+  height: 20px;
+
+}
+.red-circle {
+  background-color: #F15F5D;
+}
+
+.green-circle {
+
+  background-color: #4DB748;
+
+}
+.yellow-circle {
+  background-color: #FEBE2E;
+}
+
+
+.modal-body p{
+  font-family: "Bree Serif", serif;
+  font-size: 21px;
+  line-height: 1.3;
+  color: #352e28;
+  font-weight: bold;
+}
+.modal-body i{
+  color: #BB4120;
+}
+.modal-body li{
+  font-size: 18px;
+  padding-top: 10px
+}
+
+#alertErr{
+width: fit-content;
+text-transform: capitalize;
+top: 10%;
+}
